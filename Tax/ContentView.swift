@@ -1,10 +1,3 @@
-//
-//  ContentView.swift
-//  Tax
-//
-//  Created by leon smit on 21/11/2025.
-//
-
 import SwiftUI
 
 struct ContentView: View {
@@ -17,7 +10,7 @@ struct ContentView: View {
         }
         .padding()
     }
-}
+} 
 
 #Preview {
     ContentView()
