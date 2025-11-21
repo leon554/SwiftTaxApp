@@ -1,19 +1,20 @@
 import SwiftUI
 import Observation
 
-struct TaxCalculation {
+struct TaxCalculation: Identifiable {
+    let id = UUID()
     var preTaxAmt: Double
     var taxRate: Double
     var postTaxAmt: Double
     
     init(_ preTaxAmt: Double, _ taxRate: Double) {
-        self.preTaxAmt = preTaxAmt
+        self.preTaxAmt = preTaxAmt.rounded()
+        self.postTaxAmt = (preTaxAmt - (preTaxAmt * taxRate)).rounded()
         self.taxRate = taxRate
-        self.postTaxAmt = preTaxAmt - (preTaxAmt * taxRate)
     }
 }
 
 @Observable
-class TaxState {
+class TaxState{
     var taxCalculations: [TaxCalculation] = []
 }
