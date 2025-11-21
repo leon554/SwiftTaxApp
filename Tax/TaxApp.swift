@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct TaxApp: App {
+    @State private var taxState = TaxState()
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environment(taxState)
         }
     }
 }
